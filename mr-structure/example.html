@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minimal Replace Example</title>
+    <style>
+        body {
+            background: #2e4052;
+            font-family: sans-serif;
+            color: #f9f9f9;
+        }
+        .card {
+            margin: 0 3em;
+            position: absolute;
+            top: 50%;
+            transform: perspective(1px) translateY(-50%);
+        }
+        a { color: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <div class='card'>
+        <h5>Hello</h5>
+        <h1>I'm {{::name}}</h1>
+        <h2>from the {{::planet}}</h2>
+        <p><i>This is an example page of Minimal Replace, for more information, find us on <a href="{{::mr-link}}">Github</a></i></p>
+    </div>
+    <script src="example.js"></script>
+    <script src="https://arturguedes.github.io/MinimalReplace/js/minimalreplace.min.js"></script>
+</body>
+</html>

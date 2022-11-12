@@ -133,6 +133,8 @@ function TASK_9() {
     else alert("Вы ввели что-то не то, попробуйте еще раз :)")
 }
 
+/*
+
 let nameLogin = prompt("Введите логин, пожалуйста", '');
 if (nameLogin === 'Админ') {
     let password = prompt('Введите пароль, пожалуйста', '');
@@ -144,10 +146,91 @@ if (nameLogin === 'Админ') {
     } else {
         alert("Неверный пароль, попробуйте еще!")
     }
+} else if (nameLogin === '' || nameLogin === null) {
+    alert("Отменено")
+} else {
+    alert("Кто вы??")
 }
-    
-    else if (nameLogin === '' || nameLogin === null) {
-        alert("Отменено")
-    } else {
-        alert("Кто вы??")
+*/
+
+
+//TASK_10 Cicle
+
+/*
+let numHund
+ do {
+     numHund = prompt("Введите число больше 1", 0);
+ } while (numHund <= 1 && numHund);
+ */
+
+//Простые числа
+/*
+let simNum = 10;
+outer:
+    for (let i = 1; i <= simNum; i++) {
+        for (let j = 2; j < i; j++) {
+            if (i % j == 0) continue outer;
+        }
+        alert(i);
     }
+*/
+
+//TASK_11_function
+/*
+let numFirst = prompt('Введите первое число','');
+let numSecond = prompt('Введите второе число','');
+function showNum(){
+   if (numFirst < numSecond){
+       alert(numFirst)
+   } else
+       alert(numSecond)
+}
+showNum();
+*/
+
+let numNum = prompt('Введите число', '');
+let numStep = prompt('Введите степень', '');
+
+function showNum() {
+    if (numStep < 1) {
+        alert(`Степень ${numStep} не поддерживается, используйте натуральное число`)
+    } else {
+        alert(numNum ** numStep)
+    }
+}
+showNum();
+
+//TASK_12_Arrow_fanction
+let ask = (question, yes, no) => {
+if (confirm(question)) yes();
+else no();
+}
+
+ask(
+  "Вы согласны?",
+  () => alert("Вы согласились."),
+  () => alert("Вы отменили выполнение.")
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

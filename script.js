@@ -15,7 +15,7 @@ function TASK_2() {
     name = inpt.value;
     admin = name;
 
-    alert("Admin:" + " " + admin)
+    alert( "Admin:" + " " + admin )
     inpt.value = ""
 }
 /*function prikol(event) {
@@ -128,7 +128,7 @@ function TASK_9() {
     if (age >= 14 && age <= 90)
         alert("Я бы вам дал меньше лет");
 
-    else if (!(age < 14 && age > 90))
+    else if ( !(age < 14 && age > 90) )
         alert("Вы слишком юны или стары для этой жизни!")
     else alert("Вы ввели что-то не то, попробуйте еще раз :)")
 }
@@ -166,12 +166,15 @@ let numHund
 //Простые числа
 /*
 let simNum = 10;
-outer:
+
+    outer:
     for (let i = 1; i <= simNum; i++) {
         for (let j = 2; j < i; j++) {
-            if (i % j == 0) continue outer;
+
+        if (i % j == 0) continue outer;
         }
-        alert(i);
+
+    alert(i);
     }
 */
 
@@ -179,12 +182,14 @@ outer:
 /*
 let numFirst = prompt('Введите первое число','');
 let numSecond = prompt('Введите второе число','');
+
 function showNum(){
-   if (numFirst < numSecond){
-       alert(numFirst)
+    if (numFirst < numSecond){
+    alert(numFirst)
    } else
        alert(numSecond)
 }
+
 showNum();
 */
 
@@ -202,35 +207,12 @@ showNum();
 
 //TASK_12_Arrow_fanction
 let ask = (question, yes, no) => {
-if (confirm(question)) yes();
-else no();
+    if (confirm(question)) yes();
+    else no();
 }
 
 ask(
-  "Вы согласны?",
-  () => alert("Вы согласились."),
-  () => alert("Вы отменили выполнение.")
+    "Вы согласны?",
+    () => alert("Вы согласились."),
+    () => alert("Вы отменили выполнение.")
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

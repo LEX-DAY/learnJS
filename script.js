@@ -168,7 +168,8 @@ let numHund
 let simNum = 10;
 
     outer:
-    for (let i = 1; i <= simNum; i++) {
+
+  for (let i = 1; i <= simNum; i++) {
         for (let j = 2; j < i; j++) {
 
         if (i % j == 0) continue outer;
@@ -216,3 +217,61 @@ ask(
     () => alert("Вы согласились."),
     () => alert("Вы отменили выполнение.")
 );
+
+//TASK_13_obj
+//TASK_13_1
+let user = {};
+user["name"] = "John";
+user["supName"] = "Smith";
+
+console.log(user.name);
+console.log(user.supName);
+
+user.name = prompt('Введите имя пользователя','');
+console.log(user.name);
+
+delete user.name;
+console.log(user.name);
+
+//TASK_13_2
+let obj = {};
+
+function isEmpty(obj){
+    for (let prop in obj) {
+        return true; // true
+    }
+    return false; // false
+}
+
+//TASK_13_3
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+}
+
+let sumSo = 0;
+
+for (let key in salaries){
+    sumSo += salaries[key];
+}
+console.log(sumSo)
+
+//TASK_13_4
+let $obj
+
+
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+function numeric() {
+    for (let key in menu) {
+       if (typeof menu[key] == 'Number') {
+        menu[key]  *= 2;
+       }
+    }
+}
+numeric();
+console.log(menu);

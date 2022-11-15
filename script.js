@@ -2,21 +2,21 @@
 
 //TASK_1
 function TASK_1() {
-    alert("Я JavaScript")
+	alert("Я JavaScript");
 }
 
 //TASK_2
 function TASK_2() {
-    const inpt = document.getElementById('$name');
-    console.log(inpt)
+	const inpt = document.getElementById('$name');
+	console.log(inpt)
 
-    let name, admin;
+	let name, admin;
 
-    name = inpt.value;
-    admin = name;
+	name = inpt.value;
+	admin = name;
 
-    alert( "Admin:" + " " + admin )
-    inpt.value = ""
+	alert("Admin:" + " " + admin)
+	inpt.value = ""
 }
 /*function prikol(event) {
     console.log(event.target.value)
@@ -121,16 +121,16 @@ console.log(massageLogin)
 
 //TASK_9_1
 function TASK_9() {
-    const inpt = document.getElementById('TASK_9');
-    console.log(inpt)
+	const inpt = document.getElementById('TASK_9');
+	console.log(inpt)
 
-    let age = Number(inpt.value);
-    if (age >= 14 && age <= 90)
-        alert("Я бы вам дал меньше лет");
+	let age = Number(inpt.value);
+	if (age >= 14 && age <= 90)
+		alert("Я бы вам дал меньше лет");
 
-    else if ( !(age < 14 && age > 90) )
-        alert("Вы слишком юны или стары для этой жизни!")
-    else alert("Вы ввели что-то не то, попробуйте еще раз :)")
+	else if (!(age < 14 && age > 90))
+		alert("Вы слишком юны или стары для этой жизни!")
+	else alert("Вы ввели что-то не то, попробуйте еще раз :)")
 }
 
 /*
@@ -192,30 +192,30 @@ function showNum(){
 }
 
 showNum();
-*/
+
 
 let numNum = prompt('Введите число', '');
 let numStep = prompt('Введите степень', '');
 
 function showNum() {
-    if (numStep < 1) {
-        alert(`Степень ${numStep} не поддерживается, используйте натуральное число`)
-    } else {
-        alert(numNum ** numStep)
-    }
+	if (numStep < 1) {
+		alert(`Степень ${numStep} не поддерживается, используйте натуральное число`)
+	} else {
+		alert(numNum ** numStep)
+	}
 }
 showNum();
 
 //TASK_12_Arrow_fanction
 let ask = (question, yes, no) => {
-    if (confirm(question)) yes();
-    else no();
+	if (confirm(question)) yes();
+	else no();
 }
 
 ask(
-    "Вы согласны?",
-    () => alert("Вы согласились."),
-    () => alert("Вы отменили выполнение.")
+	"Вы согласны?",
+	() => alert("Вы согласились."),
+	() => alert("Вы отменили выполнение.")
 );
 
 //TASK_13_obj
@@ -227,7 +227,7 @@ user["supName"] = "Smith";
 console.log(user.name);
 console.log(user.supName);
 
-user.name = prompt('Введите имя пользователя','');
+user.name = prompt('Введите имя пользователя', '');
 console.log(user.name);
 
 delete user.name;
@@ -236,42 +236,141 @@ console.log(user.name);
 //TASK_13_2
 let obj = {};
 
-function isEmpty(obj){
-    for (let prop in obj) {
-        return true; // true
-    }
-    return false; // false
+function isEmpty(obj) {
+	for (let prop in obj) {
+		return true; // true
+	}
+	return false; // false
 }
 
 //TASK_13_3
 let salaries = {
-  John: 100,
-  Ann: 160,
-  Pete: 130
+	John: 100,
+	Ann: 160,
+	Pete: 130
 }
 
 let sumSo = 0;
 
-for (let key in salaries){
-    sumSo += salaries[key];
+for (let key in salaries) {
+	sumSo += salaries[key];
 }
 console.log(sumSo)
 
 //TASK_13_4
-let $obj
-
-
 let menu = {
-  width: 200,
-  height: 300,
-  title: "My menu"
+	width: 200,
+	height: 300,
+	title: "My menu"
 };
+
 function numeric() {
-    for (let key in menu) {
-       if (typeof menu[key] == 'Number') {
-        menu[key]  *= 2;
-       }
-    }
+	for (let key in menu) {
+		if (typeof menu[key] == 'Number') {
+			menu[key] *= 2;
+		}
+	}
 }
+
 numeric();
 console.log(menu);
+*/
+
+//TASK_14_meth_this
+//calculator
+/*
+let calculator = {
+
+	read () {
+		calculator["numF"] = prompt('Введите первое число ', '');
+		calculator["numT"] = prompt('Введите второе число', '');
+	},
+
+	sum () {
+		return Number(this.numF)  + Number(this.numT);
+	},
+
+	mul () {
+		return Number(this.numF) * Number(this.numT);
+	}
+
+};
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+*/
+
+/*
+let ladder = {
+	step: 0,
+	up() {
+		this.step++;
+		return this;
+	},
+
+	down() {
+		this.step--;
+		return this;
+	},
+
+	showStep: function () { // показывает текущую ступеньку
+		alert(this.step);
+		return this;
+	}
+};
+*/
+
+/*
+ladder.up();
+ladder.up();
+ladder.down();
+ladder.showStep(); // 1
+ladder.down();
+ladder.showStep(); // 0
+*/
+/*
+ladder.up().up().down().showStep().down().showStep();
+*/
+
+//TASK_15_new_calculator
+
+/*
+function Calculator() {
+
+	this.read = function () {
+			this.numF = prompt('Введите первое число ', '');
+			this.numT = prompt('Введите второе число', '');
+		},
+
+		this.sum = function () {
+			return Number(this.numF) + Number(this.numT);
+		},
+
+		this.mul = function () {
+			return Number(this.numF) * Number(this.numT);
+		}
+}
+
+let calculator = new Calculator();
+
+calculator.read();
+
+alert("Sum = " + calculator.sum());
+alert("Mul = " + calculator.mul());
+*/
+
+//TASK_15_1_accumulator
+function Accumulator(startingValue) {
+	this.value = startingValue;
+	this.read = function() {
+		this.value += Number( prompt('Введите число', '') ) ;
+	}
+}
+
+let accumulator = new Accumulator(1); // начальное значение 1
+
+accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+
+alert(accumulator.value); // выведет сумму этих значений
